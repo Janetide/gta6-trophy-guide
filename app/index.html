@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Platinum — GTA 6 Trophy Guide</title>
+<link rel="stylesheet" href="./style.css">
+<script type="module" src="./app.js"></script>
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div>
+      <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5</p>
+      <h1>Leonida Platinum</h1>
+      <p class="subtitle">The offline guide and tracker for all 55 trophies — official names,
+      descriptions and grades, a roadmap to the platinum, and a guide to each
+      trophy in our own words, with its sources.</p>
+    </div>
+    <section class="progress-card" aria-label="Progress">
+      <p class="big-count"><span id="earned-count">0</span><span class="of"> / 55</span></p>
+      <p class="progress-label">trophies earned</p>
+      <div class="progress-bar" role="progressbar" aria-label="Trophies earned" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="progress-bar"><span id="progress-fill"></span></div>
+      <ul class="grade-counts" id="grade-counts"></ul>
+      <p class="next-up" id="next-up"></p>
+    </section>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Views">
+  <button type="button" class="tab is-active" data-view="checklist" id="tab-checklist">Checklist</button>
+  <button type="button" class="tab" data-view="roadmap" id="tab-roadmap">Roadmap</button>
+  <button type="button" class="tab" data-view="missables" id="tab-missables">Missables <span class="tab-badge" id="missable-count"></span></button>
+</nav>
+
+<section class="toolbar" aria-label="Filters and tools">
+  <label class="search-box">
+    <span class="visually-hidden">Search trophies</span>
+    <input type="search" id="search" placeholder="Search name or description…" autocomplete="off">
+  </label>
+  <div class="kind-filters" id="kind-filters" role="group" aria-label="Filter by kind">
+    <button type="button" data-kind="all" class="kind-btn is-active">All</button>
+    <button type="button" data-kind="story" class="kind-btn">Story</button>
+    <button type="button" data-kind="missable" class="kind-btn">Missable</button>
+    <button type="button" data-kind="collectibles" class="kind-btn">Collectibles</button>
+    <button type="button" data-kind="activities" class="kind-btn">Activities</button>
+    <button type="button" data-kind="online" class="kind-btn">Online</button>
+  </div>
+  <label class="grade-filter">Grade
+    <select id="grade-filter">
+      <option value="all">All grades</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select>
+  </label>
+  <label class="spoiler-toggle"><input type="checkbox" id="spoiler-toggle"> Hide story spoilers</label>
+  <div class="tool-buttons">
+    <button type="button" id="export-btn">Export progress</button>
+    <button type="button" id="import-btn">Import progress</button>
+    <input type="file" id="import-file" accept=".json,application/json" class="visually-hidden" aria-label="Choose a progress file to import">
+  </div>
+</section>
+
+<main>
+  <section id="view-checklist" class="view is-visible">
+    <div class="checklist-layout">
+      <div>
+        <p class="list-meta" id="list-meta"></p>
+        <ul class="trophy-list" id="trophy-list"></ul>
+        <p class="empty-note" id="empty-note" hidden>No trophies match these filters.</p>
+      </div>
+      <aside class="detail-pane" id="detail-pane" aria-label="Trophy guide">
+        <p class="detail-empty">Select a trophy to read its guide, steps and sources.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="view-roadmap" class="view" hidden>
+    <p class="view-intro">The road to the platinum, in order. Story first, then side strands and
+    one-off moments, then collectibles, activities, and the money cleanup.
+    Tick trophies off as you earn them; the counts update everywhere.</p>
+    <div id="roadmap-stages"></div>
+  </section>
+
+  <section id="view-missables" class="view" hidden>
+    <p class="view-intro">Every trophy that can be missed, and when its window closes. All of
+    these are built from the official descriptions: a trophy tied to one
+    mission or one moment is flagged, and its guide says what is known —
+    and what is not yet confirmed in the game — about getting it back.</p>
+    <ul class="trophy-list" id="missable-list"></ul>
+  </section>
+</main>
+
+<footer>
+  <p>Sources: the official list on Exophase for every name, description and
+  grade; PSNProfiles for PSN counts where one exists; our own advice from the
+  official description, not yet checked in the game, for every how-to. This
+  guide works fully offline from its own files. Not affiliated with
+  Rockstar Games; no official artwork is used.</p>
+</footer>
+</body>
+</html>
